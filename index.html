@@ -108,209 +108,65 @@
     .stagger-2 { transition-delay: 0.25s; }
     .stagger-3 { transition-delay: 0.4s; }
 
-    /* ===== Header ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      height: 80px;
-      background: var(--cream);
-      border-bottom: 1px solid rgba(19, 108, 128, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-    }
-
-    .logo-link {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-
-    .logo-img {
-      height: 60px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-    }
-
-    .nav-links a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      text-decoration: none;
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-
-
-    /* ===== Hamburger ===== */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 3px;
-      background: var(--deep-teal);
-      border-radius: 3px;
-      transition: var(--transition);
-    }
-
-    /* ===== Mobile Nav Overlay ===== */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(252, 248, 235, 0.98);
-      z-index: 60;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-    }
-
-    .mobile-nav.open {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--deep-teal);
-      text-decoration: none;
-    }
-
-    .mobile-close {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.5rem;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--gold);
-    }
-
     /* ===== Hero ===== */
     .hero {
-      min-height: 80vh;
-      min-height: 600px;
+      min-height: 70vh;
+      min-height: 500px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 2rem 4rem;
-      background: linear-gradient(155deg, var(--light-aqua) 0%, var(--cream) 45%, var(--cream) 100%);
+      flex-direction: column;
       position: relative;
       overflow: hidden;
     }
 
-    /* Tree/brain SVG watermark */
-    .hero-motif {
-      position: absolute;
-      inset: 0;
+    .hero-inner {
+      display: flex;
+      flex: 1;
+      width: 100%;
+    }
+
+    .hero-left {
+      flex: 0 0 45%;
+      background: var(--cream);
       display: flex;
       align-items: center;
       justify-content: center;
-      pointer-events: none;
-      z-index: 0;
+      padding: 3rem;
     }
 
-    .hero-motif svg {
-      width: 60%;
-      max-width: 500px;
+    .hero-logo-img {
+      width: 300px;
+      max-width: 100%;
       height: auto;
-      color: var(--deep-teal);
-      opacity: 0.05;
-    }
-
-    /* Gold dot cluster */
-    .gold-dots {
-      position: absolute;
-      top: 2rem;
-      right: 3rem;
-      display: flex;
-      gap: 8px;
-      z-index: 1;
-    }
-
-    .gold-dots span {
       display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      opacity: 0.5;
     }
 
-    .gold-dots span:nth-child(2) {
-      width: 8px;
-      height: 8px;
-      opacity: 0.35;
+    .hero-right {
+      flex: 0 0 55%;
+      background: linear-gradient(135deg, var(--light-aqua) 0%, var(--cream) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      align-items: flex-start;
+      padding: 4rem;
     }
 
-    .gold-dots span:nth-child(3) {
-      width: 5px;
-      height: 5px;
-      opacity: 0.6;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 660px;
-    }
-
-    .hero h1 {
+    .hero-right h1 {
       font-family: 'Lora', serif;
       font-weight: 700;
       font-size: clamp(2.2rem, 5vw, 3.8rem);
       line-height: 1.15;
       color: var(--deep-teal);
       margin-bottom: 1rem;
+      max-width: 580px;
     }
 
-    .hero-logo {
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-logo-img {
-      width: 280px;
-      max-width: 90vw;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .hero p {
+    .hero-right p {
       font-family: 'Inter', sans-serif;
       font-weight: 400;
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--text-dark);
-      max-width: 580px;
-      margin: 0 auto 2rem;
+      max-width: 520px;
       line-height: 1.7;
     }
 
@@ -328,28 +184,6 @@
       display: block;
       width: 100%;
       height: auto;
-    }
-
-    /* ===== Buttons ===== */
-    .btn-cta {
-      display: inline-block;
-      background: var(--deep-teal);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      padding: 0.9rem 2.5rem;
-      border-radius: var(--radius-md);
-      text-decoration: none;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-cta:hover {
-      background: #1A899F;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(19, 108, 128, 0.2);
     }
 
     /* ===== Services Section ===== */
@@ -420,27 +254,6 @@
       line-height: 1.7;
     }
 
-    .see-more {
-      margin-top: 2.5rem;
-      text-align: center;
-    }
-
-    .see-more a {
-      color: var(--deep-teal);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 3px;
-      transition: var(--transition);
-    }
-
-    .see-more a:hover {
-      color: var(--gold);
-      border-bottom-color: var(--deep-teal);
-    }
-
     /* ===== Why Us Section ===== */
     #why {
       background: var(--cream);
@@ -500,13 +313,6 @@
       line-height: 1.7;
     }
 
-    /* ===== CTA Section ===== */
-    .cta-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: var(--cream);
-    }
-
     /* ===== Footer ===== */
     footer {
       background: var(--deep-teal);
@@ -546,55 +352,31 @@
       color: rgba(255, 255, 255, 0.75);
     }
 
-    /* ===== Leaf accent decor ===== */
-    .leaf-accent {
-      position: absolute;
-      color: var(--soft-teal);
-      opacity: 0.12;
-      pointer-events: none;
-    }
-
-    .leaf-top-left {
-      top: 1rem;
-      left: 1rem;
-    }
-
-    .leaf-bottom-right {
-      bottom: 1rem;
-      right: 1rem;
-    }
-
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
-      header {
-        height: 70px;
-        padding: 0 1.25rem;
-      }
-
-      .logo-img {
-        height: 48px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
       .hero {
         min-height: auto;
-        padding: 90px 1.25rem 2.5rem;
       }
 
-      .hero-motif svg {
-        width: 80%;
-        opacity: 0.03;
+      .hero-inner {
+        flex-direction: column;
       }
 
-      .gold-dots {
-        display: none;
+      .hero-left, .hero-right {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      .hero-left {
+        padding: 2.5rem 2rem;
+      }
+
+      .hero-right {
+        padding: 2.5rem 2rem;
+      }
+
+      .hero-logo-img {
+        width: 200px;
       }
 
       .wave-divider svg {
@@ -618,68 +400,24 @@
         height: 52px;
       }
 
-      .btn-cta {
-        font-size: 0.95rem;
-        padding: 0.8rem 2rem;
-      }
-
       .section-title {
         margin-bottom: 2rem;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .mobile-nav {
-        display: none !important;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <a href="#" class="logo-link" aria-label="JOYA Psychological Services LLC home">
-      <img src="images/joya-logo.jpg" alt="JOYA Psychological Services LLC" class="logo-img">
-    </a>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-    </nav>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <!-- ===== MOBILE NAV OVERLAY ===== -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
-    <a href="#services" class="mobile-link">Services</a>
-    <a href="#why" class="mobile-link">Why Us</a>
-  </div>
-
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <!-- Gold dot cluster top-right -->
-    <div class="gold-dots" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- Tree/brain SVG watermark -->
-    <div class="hero-motif" aria-hidden="true">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 170 C50 140 30 120 40 90 C45 70 65 55 80 45 C85 40 82 30 75 25 C70 20 58 18 55 22 C50 28 48 35 55 40 C45 38 30 28 25 35 C18 44 20 58 30 60 C20 62 10 70 8 82 C5 98 15 108 28 112 C20 130 25 155 40 170 Z" fill="currentColor" opacity="0.06"/>
-        <path d="M80 45 C95 30 115 20 135 22 C155 24 175 38 178 55 C181 72 170 88 155 92 C165 110 160 135 145 150" fill="none" stroke="currentColor" stroke-width="2" opacity="0.06"/>
-      </svg>
-    </div>
-
-    <div class="hero-content fade-up show">
-      <div class="hero-logo">
+    <div class="hero-inner">
+      <div class="hero-left fade-up show">
         <img src="images/joya-logo.jpg" alt="JOYA Psychological Services LLC" class="hero-logo-img">
       </div>
-      <h1>Bilingual evaluations that support every learner</h1>
-      <p>Compassionate psychological evaluations for students in pre-k through 12th grade.</p>
-      <a href="#" class="btn-cta">Get Started</a>
+      <div class="hero-right fade-up show">
+        <h1>Bilingual evaluations that support every learner</h1>
+        <p>Compassionate psychological evaluations for students in pre-k through 12th grade.</p>
+      </div>
     </div>
 
     <!-- Wave divider -->
@@ -693,12 +431,6 @@
   <!-- ===== FEATURED SERVICES ===== -->
   <section id="services">
     <div class="container" style="position:relative;">
-      <!-- Leaf accent top-left -->
-      <svg class="leaf-accent leaf-top-left" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M16 2 C16 2 28 8 28 20 C28 28 22 30 16 30 C10 30 4 28 4 20 C4 8 16 2 16 2Z" fill="currentColor"/>
-        <path d="M16 2 L16 16 M16 16 L24 8 M16 16 L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-
       <h2 class="section-title fade-up">Featured Services</h2>
 
       <div class="services-grid">
@@ -728,22 +460,12 @@
           <p>Updated assessment to guide ongoing student support, track intervention outcomes, and refine IEP or 504 recommendations.</p>
         </div>
       </div>
-
-      <div class="see-more fade-up">
-        <a href="#">See more services &rarr;</a>
-      </div>
     </div>
   </section>
 
   <!-- ===== WHY FAMILIES CHOOSE US ===== -->
   <section id="why">
     <div class="container" style="position:relative;">
-      <!-- Leaf accent bottom-right -->
-      <svg class="leaf-accent leaf-bottom-right" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M16 2 C16 2 28 8 28 20 C28 28 22 30 16 30 C10 30 4 28 4 20 C4 8 16 2 16 2Z" fill="currentColor"/>
-        <path d="M16 2 L16 16 M16 16 L24 8 M16 16 L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-
       <h2 class="section-title fade-up">Why Families Choose Us</h2>
 
       <div class="why-grid">
@@ -781,13 +503,6 @@
           <p>Families and school teams are included throughout the process, fostering shared understanding and coordinated support.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA SECTION ===== -->
-  <section class="cta-section" id="contact">
-    <div class="container fade-up">
-      <a href="#" class="btn-cta">Get Started</a>
     </div>
   </section>
 
@@ -830,35 +545,6 @@
 
       document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
         observer.observe(el);
-      });
-
-      // Hamburger menu toggle
-      const hamburger = document.getElementById('hamburgerBtn');
-      const mobileNav = document.getElementById('mobileNav');
-      const mobileClose = document.getElementById('mobileClose');
-
-      function openMobile() {
-        mobileNav.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMobile() {
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      hamburger.addEventListener('click', openMobile);
-      mobileClose.addEventListener('click', closeMobile);
-
-      document.querySelectorAll('.mobile-link').forEach(function(link) {
-        link.addEventListener('click', closeMobile);
-      });
-
-      // Close mobile nav on resize to desktop
-      window.addEventListener('resize', function() {
-        if (window.innerWidth >= 769) {
-          closeMobile();
-        }
       });
     })();
   </script>
